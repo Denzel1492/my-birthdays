@@ -14,7 +14,10 @@
     <div class="app-container">
         <header>
             <h1>🎉 Именинники</h1>
-            <button id="enable-notifications" class="notify-btn">Включить напоминания (10:00)</button>
+            <div class="header-buttons">
+                <button id="enable-notifications" class="notify-btn">Уведомления (10:00)</button>
+                <button id="open-add-modal" class="add-btn">➕ Добавить</button>
+            </div>
         </header>
         
         <main>
@@ -27,6 +30,27 @@
             <div id="birthdays-list" class="list-container"></div>
         </main>
     </div>
+
+    <!-- Модальное окно формы (для добавления и редактирования) -->
+    <div id="form-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modal-title">Добавить именинника</h3>
+            <input type="hidden" id="edit-id">
+            <div class="input-group">
+                <label for="person-name">Имя и фамилия</label>
+                <input type="text" id="person-name" placeholder="Например: Иван Иванов">
+            </div>
+            <div class="input-group">
+                <label for="person-date">Дата рождения</label>
+                <input type="date" id="person-date">
+            </div>
+            <div class="modal-actions">
+                <button id="close-modal" class="cancel-btn">Отмена</button>
+                <button id="save-person" class="save-btn">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>

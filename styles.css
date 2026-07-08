@@ -4,6 +4,8 @@
     --text-color: #000000;
     --accent-color: #007aff;
     --today-bg: #e3f2fd;
+    --danger-color: #ff3b30;
+    --input-bg: #e9e9eb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,11 +15,13 @@
         --text-color: #ffffff;
         --accent-color: #0a84ff;
         --today-bg: #1c3d5a;
+        --danger-color: #ff453a;
+        --input-bg: #3a3a3c;
     }
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
@@ -37,17 +41,26 @@ header {
     margin-bottom: 20px;
 }
 
-.notify-btn {
-    background-color: var(--accent-color);
-    color: white;
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.notify-btn, .add-btn {
+    flex: 1;
     border: none;
-    padding: 10px 20px;
+    padding: 12px;
     border-radius: 12px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
+    text-align: center;
 }
+
+.notify-btn { background-color: var(--accent-color); color: white; }
+.add-btn { background-color: #34c759; color: white; }
 
 .today-box {
     background-color: var(--today-bg);
@@ -57,11 +70,7 @@ header {
     border: 2px solid var(--accent-color);
 }
 
-.list-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+.list-container { display: flex; flex-direction: column; gap: 10px; }
 
 .birthday-card {
     background-color: var(--card-bg);
@@ -73,27 +82,71 @@ header {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.name {
-    font-weight: 600;
-    font-size: 16px;
+.card-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
-.date {
-    font-size: 14px;
-    color: #8e8e93;
+.edit-btn, .delete-btn {
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
 }
 
 .days-left {
     font-size: 12px;
-    background-color: #e5e5ea;
-    color: #000;
+    background-color: var(--input-bg);
     padding: 4px 8px;
     border-radius: 20px;
     font-weight: bold;
 }
 
-@media (prefers-color-scheme: dark) {
-    .days-left { background-color: #3a3a3c; color: #fff; }
+/* Модальное окно */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.hidden { display: none; }
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    width: 85%;
+    max-width: 400px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.input-group label { font-size: 14px; color: #8e8e93; }
+
+.input-group input {
+    background-color: var(--input-bg);
+    border: none;
+    color: var(--text-color);
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+
+.cancel-btn, .save-btn {
+    flex: 1; border: none; padding: 12px; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer;
+}
+.cancel-btn { background-color: var(--input-bg); color: var(--text-color); }
+.save-btn { background-color: var(--accent-color); color: white; }
+
+.hidden { display: none !important; }
