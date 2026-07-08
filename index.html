@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дни Рождения</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>🎉 Именинники</h1>
+            <button id="enable-notifications" class="notify-btn">Включить напоминания (10:00)</button>
+        </header>
+        
+        <main>
+            <div id="today-container" class="today-box hidden">
+                <h2>🎂 Сегодня празднуют:</h2>
+                <div id="today-list"></div>
+            </div>
+
+            <h2>Ближайшие дни рождения:</h2>
+            <div id="birthdays-list" class="list-container"></div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

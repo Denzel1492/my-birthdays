@@ -1,0 +1,99 @@
+:root {
+    --bg-color: #f2f2f7;
+    --card-bg: #ffffff;
+    --text-color: #000000;
+    --accent-color: #007aff;
+    --today-bg: #e3f2fd;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1c1c1e;
+        --card-bg: #2c2c2e;
+        --text-color: #ffffff;
+        --accent-color: #0a84ff;
+        --today-bg: #1c3d5a;
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.notify-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.today-box {
+    background-color: var(--today-bg);
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--accent-color);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.birthday-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.date {
+    font-size: 14px;
+    color: #8e8e93;
+}
+
+.days-left {
+    font-size: 12px;
+    background-color: #e5e5ea;
+    color: #000;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+    .days-left { background-color: #3a3a3c; color: #fff; }
+}
+
+.hidden { display: none; }
